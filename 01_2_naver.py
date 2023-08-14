@@ -21,7 +21,7 @@ soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래
 
 # api_txt_lines total_tit _cross_trigger
 
-result = soup.select(".api_txt_lines.total_tit._cross_trigger")
+results = soup.select(".api_txt_lines.total_tit._cross_trigger")
 
-print(result)
-print(type(result))
+for result in results:
+    print(result.text)
