@@ -24,4 +24,5 @@ soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래
 results = soup.select(".api_txt_lines.total_tit._cross_trigger")
 
 for result in results:
-    print(result.text)
+    print(result['href'])
+    print(result.text) # result 자체는 <a> 태그임
