@@ -20,3 +20,8 @@ print()
 
 h1 = soup.select_one('h1')
 print(h1)
+print()
+
+h1 = soup.find(class_="search_logo")
+print(h1)
+print()
