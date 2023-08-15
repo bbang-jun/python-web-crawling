@@ -35,3 +35,5 @@ for area in areas:
     print(title.text)
     print(title["href"])
     print()
+
+print(len(areas))
