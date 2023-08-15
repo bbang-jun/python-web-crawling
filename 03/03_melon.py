@@ -19,6 +19,6 @@ lst100 = soup.select(".lst100")
 top100 = lst50 + lst100
 
 for rank, i in enumerate(top100, start=1):
-    title = i.select_one(".ellipsis.rank01").text
-    print(f"{rank} : {title}")
+    title = i.select_one(".ellipsis.rank01 a").text # 정확하게 a 태그 찾기. 기존에는 div 태그가 있어서 자동 개행되었음.
+    print(f"{rank} : {title}") # .text는 내부에 여러 태그가 있더라도 찾아주지만 .string은 정확하게 바로 아래 태그에서만 찾음
     print()
