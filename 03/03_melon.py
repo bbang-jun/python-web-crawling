@@ -2,12 +2,14 @@ import requests
 from bs4 import BeautifulSoup # beautiful soup 라이브러리 import
 
 def get_song_nums(song_num_text): # js 문자열에서 아티스트 번호 파싱
-    song_num = []
-    for num in song_num_text:
-        if num.isdigit():
-            song_num.append(num) # ['7', '2', '5', '9', '8', '7'] -> 725987
+    # song_num = []
+    # for num in song_num_text:
+    #     if num.isdigit():
+    #         song_num.append(num) # ['7', '2', '5', '9', '8', '7'] -> 725987
+    #
+    # song_num = "".join(song_num)
 
-    song_num = "".join(song_num)
+    song_num = "".join([num for num in song_num_text if num.isdigit()])
 
     return song_num
 
