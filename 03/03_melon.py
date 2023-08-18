@@ -31,9 +31,9 @@ top100 = lst50 + lst100
 for rank, i in enumerate(top100, start=1):
     title = i.select_one(".ellipsis.rank01 a") # 정확하게 a 태그 찾기. 기존에는 div 태그가 있어서 자동 개행되었음.
     singer = i.select_one(".ellipsis.rank02 > a") # 바로 아래에 a 태그가 있음을 의미
-    singer_link = singer['href']
+    singer_link = get_song_nums(singer['href'])
     album = i.select_one(".ellipsis.rank03 > a")
-    album_link = album['href']
+    album_link = get_song_nums(album['href'])
     print(f"{rank} : {title.text}") # .text는 내부에 여러 태그가 있더라도 찾아주지만 .string은 정확하게 바로 아래 태그에서만 찾음
     print(f"{singer.text} : {singer_link}")
     print(f"{album.text} : {album_link}")
