@@ -23,13 +23,16 @@ html = req.content.decode('utf-8','replace') # 한글이 깨지는 현상 발생
 
 soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래스를 통한 객체 생성)
 
+# 1번째 방법
 # lst50 = soup.select(".lst50")
 # lst100 = soup.select(".lst100")
 # top100 = lst50 + lst100
 
-top100 = soup.select(".lst50, .lst100")
+# 2번째 방법
+# top100 = soup.select(".lst50, .lst100")
 
-
+# 3번째 방법
+top100 = soup.find_all(class_=["lst50", "lst100"])
 
 for rank, i in enumerate(top100, start=1):
     title = i.select_one(".ellipsis.rank01 a") # 정확하게 a 태그 찾기. 기존에는 div 태그가 있어서 자동 개행되었음.
