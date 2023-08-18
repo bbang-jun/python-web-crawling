@@ -21,3 +21,5 @@ soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래
 item_issue = soup.select(".item_issue")
 
 for item in item_issue:
+    press = item.select(".thumb_g")
+    print(press)
