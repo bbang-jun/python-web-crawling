@@ -21,7 +21,7 @@ movie_chart = sect_movie_chart.select("li") # 각 영화
 
 print(len(movie_chart)) # 19개가 나왔으므로 movie_chart 안에서 반복을 돌리며 추출하면 됨
 
-for movie in movie_chart:
+for rank, movie in enumerate(movie_chart, 1):
     title = movie.select_one(".title")
     score = movie.select_one(".score") # 예매율 %와 선호도 %가 함께 들어 있는 class
     ticketing = score.select_one(".percent")
@@ -29,6 +29,7 @@ for movie in movie_chart:
     info = movie.select_one(".txt-info > strong").next_element
     open = movie.select_one(".txt-info > strong > span").text
 
+    print(f"<<<<{rank}위>>>>")
     print(title.text)
     print(ticketing.get_text(" : "))
     print(egg_percent.text)
