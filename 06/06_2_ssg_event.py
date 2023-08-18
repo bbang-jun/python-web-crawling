@@ -24,6 +24,10 @@ for eo_link in eo_links:
 
     text_list = eo_in.find_all(string = True)
 
+    for text in text_list:
+        if text != "\n":
+            print(text)
+
     # print(f"{title} : {mall}")
     # print(f"{period} : {link}")
     # print()
