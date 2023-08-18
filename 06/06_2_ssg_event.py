@@ -21,15 +21,9 @@ eo_links = evt_osmu_lst.select(".eo_link")
 for eo_link in eo_links:
     link = eo_link["href"]
     eo_in = eo_link.select_one(".eo_in") # 기간, 제목, 이벤트 회사를 가지고 있는 class
-    period = eo_in.select_one(".eo_period").text.strip()
-    title = eo_in.select_one(".eo_tit > strong").text.strip()
-    mall = eo_in.select_one(".eo_mall").text.strip()
-    print(f"{title} : {mall}")
-    print(f"{period} : {link}")
-    print()
 
-# units = evt_osmu_lst.select(".eo_link")
-#
-# for unit in units:
-#     link = unit["href"]
-#     print(link)
+    text_list = eo_in.find_all(string = True)
+
+    # print(f"{title} : {mall}")
+    # print(f"{period} : {link}")
+    # print()
