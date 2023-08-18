@@ -35,6 +35,6 @@ for rank, i in enumerate(top100, start=1):
     album = i.select_one(".ellipsis.rank03 > a")
     album_link = get_song_nums(album['href'])
     print(f"{rank} : {title.text}") # .text는 내부에 여러 태그가 있더라도 찾아주지만 .string은 정확하게 바로 아래 태그에서만 찾음
-    print(f"{singer.text} : {singer_link}")
-    print(f"{album.text} : {album_link}")
+    print(f"{singer.text} : https://www.melon.com/artist/timeline.htm?artistId={singer_link}")
+    print(f"{album.text} : https://www.melon.com/album/detail.htm?albumId={album_link}")
     print()
