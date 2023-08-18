@@ -21,6 +21,10 @@ soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래
 item_issue = soup.select(".item_issue")
 
 for item in item_issue:
-    press = item.select_one(".logo_cp > img")["alt"]
-    print(press)
+    press = item.select_one(".logo_cp > img")["alt"] # 언론사
+    category = item.select_one(".txt_category").text # 카테고리
+    title = item.select_one(".link_txt").text.strip() # 기사 제목
+    link = item.select_one(".link_txt")["href"] # 기사 링크
+    print(f"{press} - {category}")
+    print(f"{title} : {link}")
     print()
