@@ -27,9 +27,10 @@ for movie in movie_chart:
     ticketing = score.select_one(".percent")
     egg_percent = score.select_one(".egg-gage.small > .percent")
     info = movie.select_one(".txt-info > strong").next_element
+    open = movie.select_one(".txt-info > strong > span").text
 
     print(title.text)
     print(ticketing.get_text(" : "))
     print(egg_percent.text)
-    print(info.strip())
+    print(f"{info.strip()} {open}")
     print()
