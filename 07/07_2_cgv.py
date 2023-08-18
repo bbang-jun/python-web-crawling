@@ -26,5 +26,5 @@ for movie in movie_chart:
     score = movie.select_one(".score") # 예매율 %와 선호도 %가 함께 들어 있는 class
     ticketing = score.select_one(".percent")
     print(title.text)
-    print(ticketing.text)
+    print(ticketing.get_text(" : "))
     print()
