@@ -22,6 +22,7 @@ for unit in evt_osmu_unit:
     link = unit["href"]
     print(link)
     print()
+print(len(link))
 
 # units = evt_osmu_lst.select(".eo_link")
 #
