@@ -25,6 +25,8 @@ for movie in movie_chart:
     title = movie.select_one(".title")
     score = movie.select_one(".score") # 예매율 %와 선호도 %가 함께 들어 있는 class
     ticketing = score.select_one(".percent")
+    egg_percent = score.select_one(".egg-gage.small > .percent")
     print(title.text)
     print(ticketing.get_text(" : "))
+    print(egg_percent.text)
     print()
