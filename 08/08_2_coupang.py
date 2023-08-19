@@ -43,6 +43,8 @@ for item in items:
     print(img_url)
     print()
 
+    img_req = requests.get(img_url) # <Response [200]>
+
     rank += 1
 
 # "search-product " 27개
