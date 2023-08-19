@@ -20,12 +20,20 @@ html = req.text
 soup = BeautifulSoup(html, "html.parser")
 
 # items = soup.select(".search-product") # 기존 방식(포함된 모든 class들을 가져옴)
-items = soup.select("[class=search-product]") # 새로운 방식(정확히 해당 calss만을 가져옴)
+items = soup.select("[class=search-product]") # 새로운 방식(정확히 해당 class만을 가져옴)
 
+rank = 1
 for item in items:
-    print(item["class"])
+    badge_rocket = item.select_one(".badge.rocket")
+    if not badge_rocket:
+        continue
+    name = item.select_one(".name")
 
-print(len(items))
+    print(f"{rank}위")
+    print(name.text)
+    print()
+
+    rank += 1
 
 # "search-product " 27개
 # "search-product search-product__ad-badge" 9개
