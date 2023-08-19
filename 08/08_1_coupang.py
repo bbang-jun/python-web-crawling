@@ -35,14 +35,11 @@ for item in items:
     print(f"{rank}위")
     print(name.text)
     print(f"{price.text} 원")
-    # if thumbnail["src"]:
-    #     print(thumbnail["src"])
-    # else if thumb
+    print(f"https://coupang.com{url}")
     if thumbnail.get("data-img-src"):
-        print(thumbnail.get("data-img-src"))
+        print(f"http:{thumbnail.get('data-img-src')}")
     else:
-        print(thumbnail["src"])
-    print(url)
+        print(f"http:{thumbnail['src']}")
     print()
 
     rank += 1
