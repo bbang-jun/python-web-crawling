@@ -45,6 +45,9 @@ for item in items:
 
     img_req = requests.get(img_url) # <Response [200]>
 
+    with open(f"image/{rank}.jpg", "wb") as f: # wb: write binary
+        f.write(img_req.content)
+
     rank += 1
 
 # "search-product " 27개
