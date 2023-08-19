@@ -28,9 +28,18 @@ for item in items:
     if not badge_rocket:
         continue
     name = item.select_one(".name")
-
+    price = item.select_one(".price-value")
+    thumbnail = item.select_one(".search-product-wrap-img")
+    # url = item.a["href"]
+    url = item.select_one(".search-product-link")["href"]
     print(f"{rank}위")
     print(name.text)
+    print(f"{price.text} 원")
+    # if thumbnail["src"]:
+    #     print(thumbnail["src"])
+    # else if thumb
+    print(thumbnail.get("data-img-src"))
+    print(url)
     print()
 
     rank += 1
