@@ -15,8 +15,17 @@ headers = {
 cookie = {"a" : "b"}
 req = requests.get(search_url, timeout=5, headers=headers, cookies=cookie)
 
-print(req.status_code)
+html = req.text
 
-# html = req.text
-#
-# soup = BeautifulSoup(html, "html.parser")
+soup = BeautifulSoup(html, "html.parser")
+
+# items = soup.select(".search-product") # 기존 방식(포함된 모든 class들을 가져옴)
+items = soup.select("[class=search-product]") # 새로운 방식(정확히 해당 calss만을 가져옴)
+
+for item in items:
+    print(item["class"])
+
+print(len(items))
+
+# "search-product " 27개
+# "search-product search-product__ad-badge" 9개
