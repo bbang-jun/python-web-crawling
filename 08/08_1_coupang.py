@@ -38,7 +38,10 @@ for item in items:
     # if thumbnail["src"]:
     #     print(thumbnail["src"])
     # else if thumb
-    print(thumbnail.get("data-img-src"))
+    if thumbnail.get("data-img-src"):
+        print(thumbnail.get("data-img-src"))
+    else:
+        print(thumbnail["src"])
     print(url)
     print()
 
