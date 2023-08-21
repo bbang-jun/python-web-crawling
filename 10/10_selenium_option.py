@@ -7,7 +7,8 @@ options = Options()
 
 options.add_experimental_option("detach", True)
 options.add_argument("--start-maximized")
-# options.add_argument("--headless")
+# options.add_argument("--headless")\
+options.add_argument("--mute-audio")
 
 driver = webdriver.Chrome(options = options)
 
@@ -16,5 +17,3 @@ url = "https://naver.com"
 driver.get(url)
 
 print(driver.page_source[:1000])
-
-driver.quit()
