@@ -16,3 +16,7 @@ driver = webdriver.Chrome(options = options)
 url = "https://naver.com"
 
 driver.get(url)
+
+print(driver.page_source[:1000])
+
+driver.quit()
