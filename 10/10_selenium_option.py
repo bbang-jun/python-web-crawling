@@ -9,6 +9,7 @@ options.add_experimental_option("detach", True)
 options.add_argument("--start-maximized")
 # options.add_argument("--headless")\
 options.add_argument("--mute-audio")
+options.add_argument("incognito")
 
 driver = webdriver.Chrome(options = options)
 
