@@ -7,7 +7,8 @@ options = Options()
 
 options.add_experimental_option("detach", True)
 # options.add_argument("--start-maximized")
-options.add_argument("--start-fullscreen")
+# options.add_argument("--start-fullscreen")
+options.add_argument("window-size=500,500")
 options.add_argument(f"user-agent={user_agent}")
 
 driver = webdriver.Chrome(options = options)
