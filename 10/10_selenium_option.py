@@ -6,6 +6,8 @@ options = Options()
 
 options.add_experimental_option("detach", True)
 
+options.add_argument("--start-maximized")
+
 driver = webdriver.Chrome(options = options)
 
 url = "https://naver.com"
