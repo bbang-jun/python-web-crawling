@@ -12,7 +12,12 @@ print(url)
 driver = webdriver.Chrome()
 
 driver.get(url)
-time.sleep(3) # 페이지에서 소스를 완전하게 받아올 수 있는 시간을 줌
+time.sleep(2) # 페이지에서 소스를 완전하게 받아올 수 있는 시간을 줌
+
+for i in range(5):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") # page_source를 받아오기 전에 스크롤 위치 설정
+    time.sleep(1) # 스크롤 후 페이지가 로드되는 시간 추가 필요
+
 html = driver.page_source
 
 soup = BeautifulSoup(html, "html.parser") # html을 html.parser로 분석(클래스를 통한 객체 생성)
@@ -26,8 +31,6 @@ elif timeline_area:
     areas = timeline_area
 else:
     print("class 확인 요망")
-
-
 
 for rank, area in enumerate(areas, 1):
     title = area.select_one(".api_txt_lines.total_tit")
