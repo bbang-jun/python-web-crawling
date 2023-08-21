@@ -6,10 +6,8 @@ user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 options = Options()
 
 options.add_experimental_option("detach", True)
-# options.add_argument("--start-maximized")
-# options.add_argument("--start-fullscreen")
-options.add_argument("window-size=500,500")
-options.add_argument("--headless")
+options.add_argument("--start-maximized")
+# options.add_argument("--headless")
 
 driver = webdriver.Chrome(options = options)
 
