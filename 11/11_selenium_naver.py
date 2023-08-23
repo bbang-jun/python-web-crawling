@@ -14,10 +14,12 @@ driver = webdriver.Chrome(options = options)
 url = "https://naver.com"
 
 driver.get(url)
-time.sleep(2)
+time.sleep(1)
 
-driver.find_element()
+# By.name도 똑같이 동작함
+driver.find_element(By.ID, "query").send_keys("뉴진스")
+time.sleep(1)
 
-# 네이버 검색창 html
-# <input id="query" name="query" type="search" title="검색어를 입력해 주세요." placeholder="검색어를 입력해 주세요."
-# maxlength="255" autocomplete="off" class="search_input" data-atcmp-element="">
+# CSS_SELECTOR는 ID와 CLASS 모두 다 할 수 있음(class는 . id는 #)
+driver.find_element(By.CSS_SELECTOR, "#search-btn").click()
+time.sleep(1)
