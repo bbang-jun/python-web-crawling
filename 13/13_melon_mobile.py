@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+from selenium.common.exceptions import NoSuchElementException
 
 options = Options()
 
@@ -40,7 +41,17 @@ driver.find_elements(By.ID, "moreBtn")[1].click()
 time.sleep(1)
 
 # list_item 1위부터 100위까지 전체 수집하는 첫 번째 방법
-chartList = driver.find_element(By.ID, "_chartList")
+# chartList = driver.find_element(By.ID, "_chartList")
+# list_items = chartList.find_elements(By.CLASS_NAME, "list_item")
 
-list_items = chartList.find_elements(By.CLASS_NAME, "list_item")
+# list_item 1위부터 100위까지 전체 수집하는 두 번째 방법
+list_items = driver.find_elements(By.CLASS_NAME, "list_item")
 
+# selenium에서는 없는 경우에 오류를 발생시킴
+for list_item in list_items[:]:
+    try:
+        ranking_num = list_item.find_element(By.CLASS_NAME, "ranking_num")
+    except NoSuchElementException:
+        list_items.remove(list_item)
+
+print(len(list_items))
