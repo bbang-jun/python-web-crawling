@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 # find_element()에서 사용하는 By
 from selenium.webdriver.common.by import By
+# enter와 같은 key를 사용하기 위한 라이브러리
+from selenium.webdriver.common.keys import Keys
 import time
 
 options = Options()
@@ -33,4 +35,8 @@ driver.find_element(By.NAME, "query").clear()
 time.sleep(0.5)
 
 driver.find_element(By.NAME, "query").send_keys("하입보이")
+time.sleep(0.5)
+
+# 처음에 검색 버튼을 클릭했던 방법 대신 enter 키를 입력하는 방법으로 검색
+driver.find_element(By.NAME, "query").send_keys(Keys.ENTER)
 time.sleep(0.5)
