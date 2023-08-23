@@ -40,3 +40,7 @@ time.sleep(0.5)
 # 처음에 검색 버튼을 클릭했던 방법 대신 enter 키를 입력하는 방법으로 검색
 driver.find_element(By.NAME, "query").send_keys(Keys.ENTER)
 time.sleep(0.5)
+
+# html의 body 태그에 페이지를 아래로 내리도록 함
+driver.find_element(By.TAG_NAME, "body").send_keys(Keys.PAGE_DOWN)
+time.sleep(0.5)
