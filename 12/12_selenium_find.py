@@ -20,13 +20,9 @@ driver.get(url)
 time.sleep(1)
 
 driver.find_element(By.XPATH, '//*[@title="검색어를 입력해 주세요."]').send_keys("손흥민", Keys.ENTER)
-time.sleep(2)
+time.sleep(1)
 
-# driver.find_element(By.CLASS_NAME)
-# driver.find_element(By.ID)
-# driver.find_element(By.CSS_SELECTOR)
-# driver.find_element(By.NAME)
-# driver.find_element(By.TAG_NAME)
-# driver.find_element(By.XPATH)
-# driver.find_element(By.LINK_TEXT)
-# driver.find_element(By.PARTIAL_LINK_TEXT)
+# driver.find_element(By.XPATH, '//*[text()="VIEW"]').click()
+driver.find_element(By.LINK_TEXT, "VIEW").click()
+time.sleep(1)
+
