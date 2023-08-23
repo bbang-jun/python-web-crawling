@@ -42,5 +42,8 @@ driver.find_element(By.NAME, "query").send_keys(Keys.ENTER)
 time.sleep(0.5)
 
 # html의 body 태그에 페이지를 아래로 내리도록 함
-driver.find_element(By.TAG_NAME, "body").send_keys(Keys.PAGE_DOWN)
+driver.find_element(By.TAG_NAME, "body").send_keys(Keys.END)
 time.sleep(0.5)
+
+# 스크린샷 찍기
+driver.save_screenshot("screenshot/naver.png")
