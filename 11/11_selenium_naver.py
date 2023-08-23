@@ -20,6 +20,10 @@ time.sleep(1)
 driver.find_element(By.ID, "query").send_keys("뉴진스")
 time.sleep(1)
 
-# CSS_SELECTOR는 ID와 CLASS 모두 다 할 수 있음(class는 . id는 #)
+# CSS_SELECTOR는 ID와 CLASS 모두 다 할 수 있음(CLASS는 . ID는 #)
 driver.find_element(By.CSS_SELECTOR, "#search-btn").click()
+time.sleep(1)
+
+# 하위에 있는(//) 모든 것에서(*) text가 VIEW인 것을 찾기(text()="VIEW"))
+driver.find_element(By.XPATH, '//*[text()="VIEW"]').click()
 time.sleep(1)
