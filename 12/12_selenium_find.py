@@ -17,13 +17,15 @@ driver = webdriver.Chrome(options = options)
 url = "https://naver.com"
 
 driver.get(url)
+
 time.sleep(1)
 
-driver.find_element(By.XPATH, '//*[@title="검색어를 입력해 주세요."]').send_keys("손흥민", Keys.ENTER)
-time.sleep(1)
+link_services = driver.find_elements(By.CLASS_NAME, "link_service")
 
-# driver.find_element(By.XPATH, '//*[text()="VIEW"]').click()
-driver.find_element(By.LINK_TEXT, "VIEW").click()
-time.sleep(1)
+for order, link_service in enumerate(link_services, 1):
+    print(order)
+    print(link_service.get_attribute("outerHTML"))
+    print(link_service.text)
+    print()
 
-driver.find_element(By.PARTIAL_LINK_TEXT, "인플루").click()
+driver.quit()
