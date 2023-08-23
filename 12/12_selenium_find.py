@@ -19,7 +19,8 @@ url = "https://naver.com"
 driver.get(url)
 time.sleep(1)
 
-driver.find_element(By.XPATH, '//*[@title="검색어를 입력해 주세요."]').send_keys("손흥민")
+driver.find_element(By.XPATH, '//*[@title="검색어를 입력해 주세요."]').send_keys("손흥민", Keys.ENTER)
+time.sleep(2)
 
 # driver.find_element(By.CLASS_NAME)
 # driver.find_element(By.ID)
