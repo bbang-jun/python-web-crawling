@@ -23,9 +23,12 @@ time.sleep(1)
 link_services = driver.find_elements(By.CLASS_NAME, "link_service")
 
 for order, link_service in enumerate(link_services, 1):
-    print(order)
-    print(link_service.get_attribute("outerHTML"))
-    print(link_service.text)
-    print()
+    # print(order)
+    # print(link_service.get_attribute("outerHTML"))
+    # print(link_service.text)
+    # print()
+    if link_service.text == "웹툰":
+        link_service.click()
+        break
 
 driver.quit()
