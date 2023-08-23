@@ -57,16 +57,24 @@ list_items = chartList.find_elements(By.CLASS_NAME, "list_item")
 
 action = ActionChains(driver)
 
-# action.move_to_element(list_items[90]).perform()
 
-for rank, item in enumerate(list_items[::10], 1):
+
+for rank, item in enumerate(list_items, 1):
+    action.move_to_element(item).perform()
     title = item.find_element(By.CSS_SELECTOR, ".title.ellipsis")
     name = item.find_element(By.CSS_SELECTOR, ".name.ellipsis")
+
+    thumb = item.find_element(By.CSS_SELECTOR, ".inner > span")
+    thumb.click()
+    time.sleep(1)
+    album_url = driver.current_url
+    driver.back()
+    time.sleep(1)
 
     print(f"<<<{rank}>>>")
     print(title.text)
     print(name.text)
-
-    time.sleep(1)
+    print(f"album url : {album_url}")
+    print()
 
 # print(len(list_items))
