@@ -26,3 +26,4 @@ time.sleep(1)
 driver.find_element(By.LINK_TEXT, "VIEW").click()
 time.sleep(1)
 
+driver.find_element(By.PARTIAL_LINK_TEXT, "인플루").click()
