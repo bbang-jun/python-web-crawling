@@ -57,6 +57,16 @@ list_items = chartList.find_elements(By.CLASS_NAME, "list_item")
 
 action = ActionChains(driver)
 
-action.move_to_element(list_items[90]).perform()
+# action.move_to_element(list_items[90]).perform()
+
+for rank, item in enumerate(list_items[::10], 1):
+    title = item.find_element(By.CSS_SELECTOR, ".title.ellipsis")
+    name = item.find_element(By.CSS_SELECTOR, ".name.ellipsis")
+
+    print(f"<<<{rank}>>>")
+    print(title.text)
+    print(name.text)
+
+    time.sleep(1)
 
 # print(len(list_items))
