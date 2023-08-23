@@ -22,5 +22,7 @@ driver = webdriver.Chrome(options = options)
 url = "https://m2.melon.com/index.htm"
 
 driver.get(url)
-
 time.sleep(1)
+
+if driver.current_url != url:
+    driver.get(url)
