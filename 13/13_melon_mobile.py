@@ -37,5 +37,10 @@ driver.find_element(By.LINK_TEXT, "멜론차트").click()
 time.sleep(1)
 
 driver.find_elements(By.ID, "moreBtn")[1].click()
-
 time.sleep(1)
+
+# list_item 1위부터 100위까지 전체 수집하는 첫 번째 방법
+chartList = driver.find_element(By.ID, "_chartList")
+
+list_items = chartList.find_elements(By.CLASS_NAME, "list_item")
+
