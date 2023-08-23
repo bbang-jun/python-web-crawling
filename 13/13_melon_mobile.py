@@ -26,3 +26,16 @@ time.sleep(1)
 
 if driver.current_url != url:
     driver.get(url)
+
+# nav_items = driver.find_elements(By.CLASS_NAME, "nav_item")
+# for nav_item in nav_items:
+#     if(nav_item.text == "멜론차트"):
+#         nav_item.click()
+#         break
+
+driver.find_element(By.LINK_TEXT, "멜론차트").click()
+time.sleep(1)
+
+driver.find_elements(By.ID, "moreBtn")[1].click()
+
+time.sleep(1)
