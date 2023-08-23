@@ -14,16 +14,23 @@ driver = webdriver.Chrome(options = options)
 url = "https://naver.com"
 
 driver.get(url)
-time.sleep(1)
+time.sleep(0.5)
 
 # By.name도 똑같이 동작함
 driver.find_element(By.ID, "query").send_keys("뉴진스")
-time.sleep(1)
+time.sleep(0.5)
 
 # CSS_SELECTOR는 ID와 CLASS 모두 다 할 수 있음(CLASS는 . ID는 #)
 driver.find_element(By.CSS_SELECTOR, "#search-btn").click()
-time.sleep(1)
+time.sleep(0.5)
 
 # 하위에 있는(//) 모든 것에서(*) text가 VIEW인 것을 찾기(text()="VIEW"))
 driver.find_element(By.XPATH, '//*[text()="VIEW"]').click()
-time.sleep(1)
+time.sleep(0.5)
+
+# clear()를 통해 검색창에 남아 있는 검색어 제거
+driver.find_element(By.NAME, "query").clear()
+time.sleep(0.5)
+
+driver.find_element(By.NAME, "query").send_keys("하입보이")
+time.sleep(0.5)
